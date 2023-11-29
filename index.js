@@ -16,6 +16,16 @@ const questions = [
         message: "Provide a short description of your project:",
     },
     {
+        type: "input",
+        name: "installation",
+        message: "Instructions on how to install your project on their local machines:",
+    },
+    {
+        type: "input",
+        name: "usage",
+        message: "Explain how users can use your project:",
+    },
+    {
         type: "list",
         name: "license",
         message: "Choose a license for your project:",
@@ -23,13 +33,23 @@ const questions = [
     },
     {
         type: "input",
-        name: "",
-        message: "",
+        name: "contributing",
+        message: "Provide guidelines on how people who want to contribute to your project can do so:",
     },
     {
-        type: "",
-        name: "",
-        message: "",
+        type: "input",
+        name: "tests",
+        message: "Detail any test suites, frameworks, or methodologies you have used to test your project:",
+    },
+    {
+        type: "input",
+        name: "username",
+        message: "Enter your GitHub username:",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email address:",
     },
 ];
 
