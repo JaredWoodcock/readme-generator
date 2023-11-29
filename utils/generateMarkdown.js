@@ -2,11 +2,11 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (license === "MIT") {
-    return "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+    return "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)";
   } else if (license === "Apache 2.0") {
-    return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
+    return "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)";
   } else if (license === "GPL 3.0") {
-    return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
+    return "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)";
   } else {
     return "";
   }
@@ -33,15 +33,13 @@ function renderLicenseSection(license) {
     return "";
   }
 
-  return `## License
-  
-  This project is licensed under the terms of the [${license} License](${renderLicenseLink(license)}).`;
+  return `This project is licensed under the terms of the ${license} License.`;
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
-  
+ 
 ## Description
 ${data.description}
 
@@ -60,9 +58,9 @@ ${data.installation}
 ${data.usage}
 
 ## License
+${renderLicenseSection(data.license)}\n
+${renderLicenseLink(data.license)}\n
 ${renderLicenseBadge(data.license)}
-${renderLicenseLink(data.license)}
-${renderLicenseSection(data.license)}
 
 ## Contributing
 ${data.contributing}

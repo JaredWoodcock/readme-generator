@@ -55,18 +55,18 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err) =>
-        err ? console.error(err) : console.log("README generated successfully!")
+    fs.writeFile(fileName, generateMarkdown(data), (err) =>
+      err ? console.error(err) : console.log(`README generated successfully!`)
     );
-}
-
-// TODO: Create a function to initialize app
-function init() {
+  }
+  
+  // TODO: Create a function to initialize app
+  function init() {
     inquirer.prompt(questions).then((data) => {
-        const markdown = generateMarkdown(data);
-        writeToFile("README.md", markdown);
+      const fileName = `${data.title.replace(/\s+/g, '-').toLowerCase()}-README.md`;
+      writeToFile(fileName, data);
     });
-}
+  }
 
 // Function call to initialize app
 init();
